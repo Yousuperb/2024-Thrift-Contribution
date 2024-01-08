@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thrift Contribution Lottery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Thrift Contribution Lottery</h1>
+  <p>Click the button to randomly select a month for your thrift contribution:</p>
+  <button onclick="selectMonth()">Select Month</button>
+  <p id="selectedMonth"></p>
+
+  <script>
+    // Variable to track whether the user has made a selection
+    var hasSelectedMonth = false;
+
+    function selectMonth() {
+      // Check if the user has already made a selection
+      if (!hasSelectedMonth) {
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        
+        // Randomly select a month
+        var randomMonth = months[Math.floor(Math.random() * months.length)];
+        
+        // Display the selected month
+        document.getElementById("selectedMonth").textContent = "Your selected month: " + randomMonth;
+
+        // Update the variable to indicate that the user has made a selection
+        hasSelectedMonth = true;
+      } else {
+        // Inform the user that they have already made a selection
+        alert("You have already selected a month. You cannot choose again.");
+      }
+    }
+  </script>
+</body>
+</html>
